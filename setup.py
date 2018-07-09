@@ -15,6 +15,12 @@ def get_version():
         raise RuntimeError('Unable to find version string in {0}.'.format(VERSION_FILE))
 
 
+tox_tests_require = [
+    'coverage>=3.7.1',
+    'flake8>=2.2.0',
+    'mock>=1.0.1',
+]
+
 tests_require = [
     'coverage>=3.7.1',
     'flake8>=2.2.0',
@@ -31,6 +37,7 @@ install_requires = [
 
 extras_require = {
     'test': tests_require,
+    'toxtests': tox_tests_require,
     'packaging': ['wheel'],
     'docs': ['Sphinx>=1.2.2', 'sphinx_rtd_theme'],
 }
