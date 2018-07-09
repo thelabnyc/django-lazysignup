@@ -20,7 +20,7 @@ admin.autodiscover()
 # set of URL patterns are used when running unit tests.
 
 urlpatterns = [
-    url(r'^admin/?', include(admin.site.urls)),
+    url(r'^admin/?', admin.site.urls),
     url(r'^convert/', include('lazysignup.urls')),
     url(r'^custom_convert/', views.convert, {
         'template_name': 'lazysignup/done.html'
