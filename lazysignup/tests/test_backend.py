@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import RequestFactory, TestCase
 from lazysignup.backends import LazySignupBackend
 
 
@@ -25,8 +25,8 @@ class BackendTests(TestCase):
             email='admin@example.com',
             password='password'
         )
-
+        request = RequestFactory().post('/login/')
         self.assertEqual(
             user.email,
-            self.backend.authenticate('admin').email
+            self.backend.authenticate(request, username='admin').email
         )

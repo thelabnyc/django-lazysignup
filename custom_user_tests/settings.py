@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'custom_user_tests',
     'lazysignup',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.contenttypes',
 )
